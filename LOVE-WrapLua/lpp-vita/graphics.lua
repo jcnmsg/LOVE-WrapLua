@@ -124,3 +124,34 @@ end
 function love.graphics.circle(x,y,radius)
     Graphics.fillCircle(x,y,radius,lv1lua.current.color)
 end
+
+function love.graphics.triangle(mode, x1, y1, x2, y2, x3, y3)
+    if mode == "fill" then
+        --Graphics.fillTriangle(x1,y1, x2,y2, x3,y3, lv1lua.current.color) --non-existant
+    elseif mode == "line" then
+        Graphics.drawLine(x1,y1, x2,y2, lv1lua.current.color);
+        Graphics.drawLine(x2,y2, x3,y3, lv1lua.current.color);
+        Graphics.drawLine(x3,y3, x1,y1, lv1lua.current.color);
+    end
+end
+
+function love.graphics.polygon(mode, vertices) 
+    local verticetable = {}
+    local index = 1
+
+    for i = 1, #vertices do
+        if math.fmod(i, 2) == 0 then
+            verticetable[index].y = vertices[i]
+            index = index + 1
+        else
+            verticetable[index] = {}
+            verticetable[index].x = vertices[i]
+        end
+    end
+
+    local triangles = love.math.triangulate(verticetable)
+
+    for i, triangle in ipairs(triangles) do
+        love.graphics.triangle(mode, triangle[1].x, triangle[1].y, triangle[2].x, triangle[2].y, triangle[3].x, triangle[3].y)
+    end
+end
