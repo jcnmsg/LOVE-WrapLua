@@ -1,5 +1,10 @@
 ## Changelog
 - By Hipreme/MrcSnm:
+
+##### jcnmsg/LOVE-WrapLua (WIP)
+- Added love.graphics.polygon and love.graphics.triangle support to OneLua and partial support to lpp-vita ("line" mode only)
+- Added love.math.triangulate
+
 ### OneLua/PS_Vita Only
 - Support most of love.graphics functions 
 - touch.lua and mouse.lua added 
@@ -18,7 +23,6 @@
 - Shader support
 - Tint blit for everything
 - Better image.blit for quads
-
 
 #### Known Issues
 - Calling screen.textwidth(font, text, size) will make the font passed on the argument to blur, the current workaround is creating a clone e.g loading the same font 2 times and then using the guinea pig to get the text width
@@ -40,3 +44,4 @@
 - Added a tool to convert your audio files recursively instantly, it just requires 'sox' command from shelll, you can find it here: http://sox.sourceforge.net/
 - The usage is the same as fastCurl, it won't delete your original audio files, it will create a copy to the supported filetype to vita, the usage is the same and the filetype can be overridden to the "filetype" you specify, the default type is mp3
 - A tool for deleting your audios, it is defaulted to only remove mp3 files, there is no confirm button, so take care 
+

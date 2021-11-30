@@ -24,6 +24,8 @@
 - love.graphics.rectangle
 - love.graphics.circle
 - love.graphics.line
+- love.graphics.triangle
+- love.graphics.polygon
 
 ## love.timer
 - love.timer.getTime
@@ -53,6 +55,7 @@
 ## love.math
 - love.math.random (same as math.random)
 - love.math.setRandomSeed (same as math.randomseed)
+- love.math.triangulate
 
 ## love.audio
 - love.audio.newSource
